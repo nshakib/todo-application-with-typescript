@@ -1,12 +1,17 @@
 import React from 'react'
 
+import style from '../module/Form.module.css'
+import NewTodo from './NewTodo'
+import TodoList from './TodoList'
 const Form = () => {
   return (
-    <div className=''>
-        <label></label>
-        <i className="fa-solid fa-paperclip"></i>
-        <input type="text" name='' value="" placeholder='Type you todo' className='fa fa-plus-circle'/><i className="fa fa-circle-plus"></i>
-        
+    <div className={style.form_section}>
+        <NewTodo />
+        <div className={style.button_group}>
+          <button className={style.btn}>Complete All Tasks</button>
+          <button className={style.btn}>Clear completed</button>
+        </div>
+        <TodoList todos={todos}/>
     </div>
   )
 }
