@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Todo = (props) => {
+const Todo = () => {
   return (
     <div>
       <div>
-        <p>{}</p>
+        <p></p>
       </div>
     </div>
   )

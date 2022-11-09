@@ -5,7 +5,7 @@ import Form from './Form'
 const Card = () => {
   return (
     <div className={style.card}>
-        <Form />
+        
     </div>
   )
 }
