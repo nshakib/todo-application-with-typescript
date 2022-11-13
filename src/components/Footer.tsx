@@ -7,7 +7,9 @@ const Footer = () => {
       <p>6 left</p>
       <ul>
         <li>All</li>
+        <li>|</li>
         <li>Incomplete</li>
+        <li>|</li>
         <li>Complete</li>
       </ul>
     </div>

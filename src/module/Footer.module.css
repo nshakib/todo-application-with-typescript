@@ -1,4 +1,17 @@
 .footer{
     display: flex;
     justify-content: space-between;
+    margin: 25px;
+}
+.footer p, .footer ul li{
+    color: #9E9E9E;
+}
+
+.footer ul{
+    display: flex;
+    list-style: none;
+}
+.footer ul li{
+    margin: 0 0 0 2px;
+    cursor: pointer;
 }
