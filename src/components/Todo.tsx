@@ -1,13 +1,8 @@
 import React from 'react'
-interface Todo{
-  text: string,
-  complete: boolean;
+type Todo{
+  todo:todo;
 }
-
-interface Props{
-  todo: Todo;
-}
-const Todo = () => {
+const Todo = ({todo}:Todo) => {
   // const {title} = props.todo; 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-// import Todo from './Todo'
+ import Todo from './Todo'
 type Todos = {
   todos:{
     title: string;
@@ -14,10 +14,7 @@ const TodoList = ({todos}: Todos) => {
     <div>
       {
           todos.map((todo) => (
-            // <Todo todo={todo} key={todo.id} id={todo.id}/>
-            <div key={todo.id}>
-                <h2>{todo.title}</h2>
-            </div>
+           <Todo todo={todo.title} key={todo.id} id={todo.id}/>
            ))
       }
     </div>

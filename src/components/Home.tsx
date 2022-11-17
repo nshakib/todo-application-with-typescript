@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 import style from '../module/Home.module.css'
@@ -8,26 +8,13 @@ import Footer from './Footer'
 import Form from './Form'
 const Home = () => {
 
-  const dummyTodo = [
-    {
-      id:1,
-      title: 'title 1'
-    },
-    {
-      id:2,
-      title: 'title 2'
-    },
-    {
-      id:3,
-      title: 'title 3'
-    }
-  ]
+  const [todos, setTodos] = useState([]);
   return (
     <div className={style.home}>
         <Navbar />
         <div className={styleCard.card}>
           <Form />
-          <TodoList todos={dummyTodo }/>
+          <TodoList todos={todos}/>
           <Footer />
         </div>
     </div>
