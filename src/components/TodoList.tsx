@@ -6,6 +6,7 @@ type Todos = {
     id: number;
 
   }[];
+ 
 };
 
 const TodoList = ({todos}: Todos) => {
@@ -14,7 +15,11 @@ const TodoList = ({todos}: Todos) => {
     <div>
       {
           todos.map((todo) => (
-           <Todo todo={todo.title} key={todo.id} id={todo.id}/>
+           <Todo 
+              todo={todo}
+              key={todo.id}
+              onRemoveTodo={todo.onRemoveTodo}
+              />
            ))
       }
     </div>

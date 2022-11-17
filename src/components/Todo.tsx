@@ -1,13 +1,33 @@
 import React from 'react'
-type Todo{
-  todo:todo;
+type Todo = {
+  todo:{
+    title:string;
+  };
 }
-const Todo = ({todo}:Todo) => {
-  // const {title} = props.todo; 
+type ButtonProps = {
+  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  };
+const Todo = ({ todo }:Todo) => {
+  const {title} = todo;
+
+  const handleClick = (id) => {
+    todo.onRemoveTodo(id);
+  }
   return (
     <div>
       <div>
-        <p></p>
+        <p>{title}</p>
+      </div>
+      <div>
+        <button
+          className=""
+          onClick={() => {
+            handleClick(id);
+          }}
+        >
+          <i className="fa fa-trash fa-2x"></i>
+        </button>
       </div>
     </div>
   )
