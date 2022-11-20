@@ -1,32 +1,19 @@
 import React from 'react'
-type Todo = {
-  todo:{
-    title:string;
-  };
-}
-type ButtonProps = {
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  };
-const Todo = ({ todo }:Todo) => {
-  const {title} = todo;
+import { TaskItem} from './Type';
 
-  const handleClick = (id) => {
-    todo.onRemoveTodo(id);
-  }
+interface TaskProps{
+  task:TaskItem;
+}
+
+const Todo = ({ task}:TaskProps) => {
+ 
   return (
     <div>
       <div>
-        <p>{title}</p>
+        <p>{task.title}</p>
       </div>
       <div>
-        <button
-          className=""
-          onClick={() => {
-            handleClick(id);
-          }}
-        >
-          <i className="fa fa-trash fa-2x"></i>
+        <button>
         </button>
       </div>
     </div>

@@ -1,26 +1,17 @@
 import React from 'react'
- import Todo from './Todo'
-type Todos = {
-  todos:{
-    title: string;
-    id: number;
+import Todo from './Todo';
+import { TaskItem } from './Type';
 
-  }[];
- 
-};
 
-const TodoList = ({todos}: Todos) => {
-  console.log(todos);
+interface TaskListProps{
+  taskList:TaskItem[];
+}
+
+const TodoList = ({taskList}: TaskListProps) => {
   return (
     <div>
       {
-          todos.map((todo) => (
-           <Todo 
-              todo={todo}
-              key={todo.id}
-              onRemoveTodo={todo.onRemoveTodo}
-              />
-           ))
+        taskList.map(task => <Todo task={task}/>)
       }
     </div>
   )
