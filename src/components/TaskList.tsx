@@ -1,6 +1,7 @@
 import React from 'react'
-import Todo from './Todo';
+import Todo from './TaskItem';
 import { TaskItem } from './Type';
+import style from '../module/TaskList.module.css'
 
 
 interface TaskListProps{
@@ -9,7 +10,7 @@ interface TaskListProps{
 
 const TodoList = ({taskList}: TaskListProps) => {
   return (
-    <div>
+    <div className={style.taskList}>
       {
         taskList.map(task => <Todo task={task}/>)
       }

@@ -1,0 +1,44 @@
+.taskItem{
+    position: relative;
+    display: block;
+    border: 1px solid #ccc;
+    padding: .5rem .5rem;
+    background-color: aquamarine;
+    color: black;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.taskItem span{
+    display: block;
+    line-height: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 0.5s all;
+}
+.taskItemBtnGroup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.taskItemBtnGroup button{
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+.taskItemBtnGroup.bg{
+    background-color: white;
+}
+.btn-star{
+    color: #ffd700;
+}
+.btn-trash{
+    color: red;
+}
+.btn-edit{
+    color: green;
+}

@@ -4,9 +4,9 @@ import Navbar from './Navbar'
 
 import style from '../module/Home.module.css'
 import styleCard from '../module/Card.module.css'
-import TodoList from './TodoList'
+import TodoList from './TaskList'
 import Footer from './Footer'
-import Form from './Form'
+import Form from './TaskForm'
 import { InitialData } from './InitialData';
 import {TaskItem} from './Type'
 
