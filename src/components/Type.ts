@@ -7,5 +7,7 @@ export interface TaskItem {
 
   }
 
+  export type RemoveTask = (id: Key) => void;
+
 //   export type addTask = (newTask: TaskItem) => void;
   export type AddTasks = (title: string) => void;

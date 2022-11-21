@@ -8,25 +8,33 @@ import TodoList from './TaskList'
 import Footer from './Footer'
 import Form from './TaskForm'
 import { InitialData } from './InitialData';
-import {TaskItem} from './Type'
+import {TaskItem, RemoveTask} from './Type'
+import Context from './Context';
 
 const Home = () => {
   const [tasks, setTask] = useState(InitialData);
   const taskItem = tasks.length+1;
   const completeTask = tasks.filter(task =>  task.completed = true).length;
   
-  const handleAddTask = (taskName:string) => {
+  const addTask = (taskName:string) => {
     setTask((prevTask) => {
       return [...prevTask, { id: uuidv4(), title:taskName,completed:false}];
     });
   };
 
+  const removeTask: RemoveTask = (Key) => {
+    const newData = todos.data.filter((ele) => ele.id !== id);
+    setTask({ data: newData });
+  };
   return (
     <div className={style.home}>
         <Navbar />
         <div className={styleCard.card}>
-          <Form addTasks={handleAddTask}/>
-          <TodoList taskList={tasks}/>
+          <Form addTasks={addTask}/>
+          <Context.Provider value={{removeTask}}>
+            <TodoList taskList={tasks}/>
+          </Context.Provider>
+          
           <Footer />
         </div>
     </div>
