@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Key, useState } from 'react'
 import { v4 as uuidv4 } from "uuid";
 import Navbar from './Navbar'
 
@@ -8,13 +8,13 @@ import TodoList from './TaskList'
 import Footer from './Footer'
 import Form from './TaskForm'
 import { InitialData } from './InitialData';
-import {TaskItem, RemoveTask} from './Type'
+import {RemoveTask} from './Type'
 import Context from './Context';
 
 const Home = () => {
   const [tasks, setTask] = useState(InitialData);
-  const taskItem = tasks.length+1;
-  const completeTask = tasks.filter(task =>  task.completed = true).length;
+  //const taskItem = tasks.length+1;
+  //const completeTask = tasks.filter(task =>  task.completed = true).length;
   
   const addTask = (taskName:string) => {
     setTask((prevTask) => {
@@ -22,16 +22,25 @@ const Home = () => {
     });
   };
 
-  const removeTask: RemoveTask = (Key) => {
-    const newData = todos.data.filter((ele) => ele.id !== id);
-    setTask({ data: newData });
+  const removeTask: RemoveTask = (id:Key) => {
+    setTask((prevTask) =>{
+      const filteredTask = prevTask.filter((taskName) => taskName.id !== id);
+      return filteredTask;
+    })
+  };
+
+
+  const   updateTask = (taskName:string) => {
+    setTask((prevTask) => {
+      return [...prevTask, { id: uuidv4(), title:taskName,completed:false}];
+    });
   };
   return (
     <div className={style.home}>
         <Navbar />
         <div className={styleCard.card}>
           <Form addTasks={addTask}/>
-          <Context.Provider value={{removeTask}}>
+          <Context.Provider value={{removeTask, updateTask}}>
             <TodoList taskList={tasks}/>
           </Context.Provider>
           
