@@ -1,10 +1,14 @@
 import React from 'react'
 
 import style from '../module/Footer.module.css'
-const Footer = () => {
+import Context from './Context';
+import {CountTask } from './Type'
+
+
+const Footer = ({countTask}: CountTask) =>{
   return (
     <div className={style.footer}>
-      <p>6 left</p>
+      <p>{countTask} left</p>
       <ul>
         <li>All</li>
         <li>|</li>
@@ -16,4 +20,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

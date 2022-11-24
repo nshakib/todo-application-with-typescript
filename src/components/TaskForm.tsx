@@ -2,11 +2,12 @@ import { title } from 'process';
 import React, { useState } from 'react'
 
 import style from '../module/Form.module.css'
-import { AddTasks,UpdateTask } from './Type';
+import { AddTasks,UpdateTask,EditTask } from './Type';
 
 interface NewTaskProps {
     addTasks:AddTasks;
     updateTask:UpdateTask;
+    
     
 };
 
@@ -29,7 +30,7 @@ const Form = ({addTasks}:NewTaskProps) => {
   return (
     <div>
       <form className={style.form} onSubmit={handleSubmit}>
-        {edit?(<>
+        {editTask?(<>
             <div className={style["form-field"]}>
               <label htmlFor='title'></label>
               <input 
